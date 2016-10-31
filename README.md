@@ -1,6 +1,6 @@
 # funcycalc
 
-Demo of FuncyCalc is available here https://7coder.github.io/fancycalc/
+Demo of FuncyCalc is available here https://7coder.github.io/funcycalc/
 
 Features
 
