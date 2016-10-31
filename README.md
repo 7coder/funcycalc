@@ -1,10 +1,10 @@
 # funcycalc
 
-Demo of FancyCalc is available here https://7coder.github.io/fancycalc/
+Demo of FuncyCalc is available here https://7coder.github.io/fancycalc/
 
 Features
 
-    Use FancyCalc like an ordinary calculator.
+    Use FuncyCalc like an ordinary calculator.
     To get result of square root:
         1. Push the number button (0..9)
         2. Then the ( √ ) button
