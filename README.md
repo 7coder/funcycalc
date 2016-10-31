@@ -23,7 +23,7 @@ Features
 
 Easter Eggs
 
-    1. Try to divido on zero.
+    1. Try to divide on zero.
     2. Try to get a long long result.
     3. ... try to find itself. Small hint: popular meme
 
