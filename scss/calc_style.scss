@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+$bgLight: #f9fafc;
+$borderColor: #262626;
+$buttonColor: #e5dec2;
+$buttonReset: #f18f00;
+$elementHover: #006a91;
+
+body{
+	text-align: center;
+	color: $borderColor;
+	background:#fff url(../img/ignasi_pattern_s.png) repeat;
+	font:13px/1.5 'Verdana', Geneva, sans-serif;
+}
+
+#top{
+	text-align: center;
+}
+
+h1{
+	font-family:'Pacifico', cursive;
+	font-size: 2.5rem;
+	margin: 20px auto;
+	text-align:center;
+	color: $elementHover;
+	text-shadow: #fff 1px 1px 0;
+}
+
+h2{
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight: 200;
+	font-size: .85rem;
+
+}
+
+.fl_left{
+	float: left;
+}
+
+.fl_right{
+	float: right;
+}
+
+#wrap{
+	text-align: left;
+	width: 940px;
+	margin: 0 auto;
+	
+}
+
+#top{
+	margin-bottom:70px;
+}
+
+#left{
+	width: 470px;
+	text-align:center;
+}
+
+
+#right{
+	width:470px;
+	font-family: Verdana, Geneva, sans-serif;
+
+	h2{
+		font-size: 1.1rem;
+		font-weight: bold;
+	}
+
+	h2, h3{
+		margin-bottom: 0px;
+		text-shadow: #fff 1px 1px 0;
+	}
+
+	ul, p{
+		margin-bottom: 15px;
+	}
+
+	ul li ul{
+		margin-left: 20px;
+	}
+}
+
+#calc_wrap{
+	border: $borderColor 5px solid;
+	border-radius: 5px;
+	width:250px;
+	padding: 20px;
+	text-align: left;
+	margin:0 auto;
+	background:#fff url(../img/lined_paper.png) repeat;
+	background-size: 40%;
+	position: relative;
+	z-index: 2;
+}
+
+
+#calc_display{
+	border: $borderColor 1px solid;
+	margin: 0 0 20px 0;
+	position: relative;
+	font-size: 2.2rem;
+}
+#calc_value{
+	padding: 0 5px 0 20px;
+	height: 50px;
+	line-height: 50px;
+	width: 224px;
+	text-align: right;
+	background: #fff;
+	margin: 0;
+	border: 0;
+	background: 0;
+	font-size: 2rem;
+
+	.event_text{
+		padding:5px 5px 0 0;
+		font-size:0.8rem;
+		line-height:1.2rem;
+	}
+}
+
+#calc_value.to_much,
+#calc_value.from9to13{
+	font-size: 1.5rem;
+}
+
+
+#calc_value.from7to9{
+	font-size: 2rem;
+}
+
+#calc_operation{
+	position: absolute;
+	top:0;
+	left:0;
+	width:58px;
+	height:50px;
+	line-height:46px;
+	font-size:1.4rem;
+	text-align:center;
+	background: #e1e1e1;
+
+}
+
+
+
+.buttons{
+	font-size: 1.2rem;
+
+	li{
+		background: $buttonColor;
+		display: block;
+		height: 60px;
+		width: 60px;
+		line-height: 60px;
+		text-align: center;
+		margin: 0 1px 1px 0;
+		cursor: pointer;
+	}
+
+	li:hover{
+	background: $borderColor;
+	transition: all 0.3s ease;
+	color: #fff;
+	}
+
+}
+
+#math{
+
+	li{
+		float: left;
+		margin-right: 1px;
+		border: none;
+	}
+
+	margin:0 0 5px 0;
+}
+
+#math_2{
+	margin-bottom:0;
+
+	li{
+		border: none;
+		margin: 0 0 1px 0;
+	}
+
+	li:first-child{
+		margin-bottom:6px;
+	}
+
+	.reset{
+		background: $buttonReset;
+	}
+
+	.reset:hover{
+		background: darken($buttonReset, 7%);
+	}
+
+	.result{
+		background: $elementHover;
+	}
+
+	.result:hover{
+		background: darken($elementHover, 7%);
+	}
+}
+
+
+
+#numbers{
+	width: 190px;
+	background: black;
+	li{
+		float: left;
+	}
+}
+
+#events{
+	position: relative;
+	height:0;
+	
+	#event_item{
+		position: absolute;
+		width: 300px;
+		height: 170px;
+		left: 90px;
+		top:0;
+		z-index: 0;
+		margin-top: 0;
+		margin-right: 0;
+		background-color: transparent;
+		background-image:  url(../img/funcycalc.png);
+		background-repeat: no-repeat;
+	}
+	#event_item.animate_top{
+		margin-top: -170px;
+		transition: margin-top 0.2s cubic-bezier(.08,.67,.51,.9);
+	}
+	#event_item.animate_right{
+		width: 160px;
+		margin-left: 300px;
+		transition: margin-left 0.2s cubic-bezier(.48,.64,.63,1.27);
+	}
+
+	.divide_on_zero{
+		background-position: -170px 0;
+	}
+
+	.lol{
+		width: 70px;
+		background-position: 0 0;
+
+	}
+
+	.too_long{
+		background-position: -470px 0;
+	}
+}
+
+footer{
+	margin: 40px;
+	padding: 20px;
+	border-top: #ccc 1px dotted;
+	color: #666;
+	font-size: 0.6rem;
+	text-align: center;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+}
+
