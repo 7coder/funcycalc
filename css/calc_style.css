@@ -30,9 +30,9 @@ h2 { font-family: Verdana, Geneva, sans-serif; font-weight: 200; font-size: .85r
 #calc_value { padding: 0 5px 0 20px; height: 50px; line-height: 50px; width: 224px; text-align: right; background: #fff; margin: 0; border: 0; background: 0; font-size: 2rem; }
 #calc_value .event_text { padding: 5px 5px 0 0; font-size: 0.8rem; line-height: 1.2rem; }
 
-#calc_value.to_much, #calc_value.from9to13 { font-size: 1.5rem; }
+#calc_value.to_much, #calc_value.from10to13 { font-size: 1.4rem; }
 
-#calc_value.from7to9 { font-size: 2rem; }
+#calc_value.from7to10 { font-size: 2rem; }
 
 #calc_operation { position: absolute; top: 0; left: 0; width: 58px; height: 50px; line-height: 46px; font-size: 1.4rem; text-align: center; background: #e1e1e1; }
 
