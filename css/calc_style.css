@@ -1,3 +1,80 @@
-@import url("https://fonts.googleapis.com/css?family=Pacifico");body{text-align:center;color:#262626;background:#fff url(../img/ignasi_pattern_s.png) repeat;font:13px/1.5 'Verdana', Geneva, sans-serif}#top{text-align:center}h1{font-family:'Pacifico', cursive;font-size:2.5rem;margin:20px auto;text-align:center;color:#006a91;text-shadow:#fff 1px 1px 0}h2{font-family:Verdana, Geneva, sans-serif;font-weight:200;font-size:.85rem}.fl_left{float:left}.fl_right{float:right}#wrap{text-align:left;width:940px;margin:0 auto}#top{margin-bottom:70px}#left{width:470px;text-align:center}#right{width:470px;font-family:Verdana, Geneva, sans-serif}#right h2{font-size:1.1rem;font-weight:bold}#right h2,#right h3{margin-bottom:0px;text-shadow:#fff 1px 1px 0}#right ul,#right p{margin-bottom:15px}#right ul li ul{margin-left:20px}#calc_wrap{border:#262626 5px solid;border-radius:5px;width:250px;padding:20px;text-align:left;margin:0 auto;background:#fff url(../img/lined_paper.png) repeat;background-size:40%;position:relative;z-index:2}#calc_display{border:#262626 1px solid;margin:0 0 20px 0;position:relative;font-size:2.2rem}#calc_value{padding:0 5px 0 20px;height:50px;line-height:50px;width:224px;text-align:right;background:#fff;margin:0;border:0;background:0;font-size:2rem}#calc_value .event_text{padding:5px 5px 0 0;font-size:0.8rem;line-height:1.2rem}#calc_value.to_much,#calc_value.from9to13{font-size:1.5rem}#calc_value.from7to9{font-size:2rem}#calc_operation{position:absolute;top:0;left:0;width:58px;height:50px;line-height:46px;font-size:1.4rem;text-align:center;background:#e1e1e1}.buttons{font-size:1.2rem}.buttons li{background:#e5dec2;display:block;height:60px;width:60px;line-height:60px;text-align:center;margin:0 1px 1px 0;cursor:pointer}.buttons li:hover{background:#262626;-webkit-transition:all 0.3s ease;transition:all 0.3s ease;color:#fff}#math{margin:0 0 5px 0}#math li{float:left;margin-right:1px;border:none}#math_2{margin-bottom:0}#math_2 li{border:none;margin:0 0 1px 0}#math_2 li:first-child{margin-bottom:6px}#math_2 .reset{background:#f18f00}#math_2 .reset:hover{background:#cd7a00}#math_2 .result{background:#006a91}#math_2 .result:hover{background:#00506d}#numbers{width:190px;background:black}#numbers li{float:left}#events{position:relative;height:0}#events #event_item{position:absolute;width:300px;height:170px;left:90px;top:0;z-index:0;margin-top:0;margin-right:0;background-color:transparent;background-image:url(../img/funcycalc.png);background-repeat:no-repeat}#events #event_item.animate_top{margin-top:-170px;-webkit-transition:margin-top 0.2s cubic-bezier(0.08, 0.67, 0.51, 0.9);transition:margin-top 0.2s cubic-bezier(0.08, 0.67, 0.51, 0.9)}#events #event_item.animate_right{width:160px;margin-left:300px;-webkit-transition:margin-left 0.2s cubic-bezier(0.48, 0.64, 0.63, 1.27);transition:margin-left 0.2s cubic-bezier(0.48, 0.64, 0.63, 1.27)}#events .divide_on_zero{background-position:-170px 0}#events .lol{width:70px;background-position:0 0}#events .too_long{background-position:-470px 0}footer{margin:40px;padding:20px;border-top:#ccc 1px dotted;color:#666;font-size:0.6rem;text-align:center}.clearfix::after{content:"";display:block;height:0;clear:both;overflow:hidden;visibility:hidden}
+@import url("https://fonts.googleapis.com/css?family=Pacifico");
+body { text-align: center; color: #262626; background: #fff url(../img/ignasi_pattern_s.png) repeat; font: 13px/1.5 'Verdana', Geneva, sans-serif; }
+
+#top { text-align: center; }
+
+h1 { font-family: 'Pacifico', cursive; font-size: 2.5rem; margin: 20px auto; text-align: center; color: #006a91; text-shadow: #fff 1px 1px 0; }
+
+h2 { font-family: Verdana, Geneva, sans-serif; font-weight: 200; font-size: .85rem; }
+
+.fl_left { float: left; }
+
+.fl_right { float: right; }
+
+#wrap { text-align: left; width: 940px; margin: 0 auto; }
+
+#top { margin-bottom: 70px; }
+
+#left { width: 470px; text-align: center; }
+
+#right { width: 470px; font-family: Verdana, Geneva, sans-serif; }
+#right h2 { font-size: 1.1rem; font-weight: bold; }
+#right h2, #right h3 { margin-bottom: 0px; text-shadow: #fff 1px 1px 0; }
+#right ul, #right p { margin-bottom: 15px; }
+#right ul li ul { margin-left: 20px; }
+
+#calc_wrap { border: #262626 5px solid; border-radius: 5px; width: 250px; padding: 20px; text-align: left; margin: 0 auto; background: #fff url(../img/lined_paper.png) repeat; background-size: 40%; position: relative; z-index: 2; }
+
+#calc_display { border: #262626 1px solid; margin: 0 0 20px 0; position: relative; font-size: 2.2rem; }
+
+#calc_value { padding: 0 5px 0 20px; height: 50px; line-height: 50px; width: 224px; text-align: right; background: #fff; margin: 0; border: 0; background: 0; font-size: 2rem; }
+#calc_value .event_text { padding: 5px 5px 0 0; font-size: 0.8rem; line-height: 1.2rem; }
+
+#calc_value.to_much, #calc_value.from9to13 { font-size: 1.5rem; }
+
+#calc_value.from7to9 { font-size: 2rem; }
+
+#calc_operation { position: absolute; top: 0; left: 0; width: 58px; height: 50px; line-height: 46px; font-size: 1.4rem; text-align: center; background: #e1e1e1; }
+
+.buttons { font-size: 1.2rem; }
+.buttons li { background: #e5dec2; display: block; height: 60px; width: 60px; line-height: 60px; text-align: center; margin: 0 1px 1px 0; cursor: pointer; }
+.buttons li:hover { background: #262626; transition: all 0.3s ease; color: #fff; }
+
+#math { margin: 0 0 5px 0; }
+#math li { float: left; margin-right: 1px; border: none; }
+
+#math_2 { margin-bottom: 0; }
+#math_2 li { border: none; margin: 0 0 1px 0; }
+#math_2 li:first-child { margin-bottom: 6px; }
+#math_2 .reset { background: #f18f00; }
+#math_2 .reset:hover { background: #cd7a00; }
+#math_2 .result { background: #006a91; }
+#math_2 .result:hover { background: #00506d; }
+
+#numbers { width: 190px; background: black; }
+#numbers li { float: left; }
+
+#events { position: relative; height: 0; }
+#events #event_item { position: absolute; width: 300px; height: 170px; left: 84px; top: 0; z-index: 0; margin-top: 0; margin-right: 0; background-color: transparent; background-image: url(../img/funcycalc.png); background-repeat: no-repeat; }
+#events #event_item.animate_top { margin-top: -170px; transition: margin-top 0.2s cubic-bezier(0.08, 0.67, 0.51, 0.9); }
+#events #event_item.animate_right { width: 160px; margin-left: 300px; transition: margin-left 0.2s cubic-bezier(0.48, 0.64, 0.63, 1.27); }
+#events .divide_on_zero { background-position: -170px 0; }
+#events .lol { width: 70px; background-position: 0 0; }
+#events .too_long { background-position: -470px 0; }
+
+#on_off { margin-bottom: 10px; }
+#on_off li { float: left; width: 32px; text-align: center; height: 20px; }
+#on_off li:nth-child(2) { width: 50px; }
+#on_off .switch_slider { position: relative; display: inline-block; width: 42px; height: 16px; border: #ccc 2px solid; }
+#on_off .switch_slider input { display: none; }
+#on_off .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #eee; transition: .3s; }
+#on_off .slider:before { position: absolute; content: ""; height: 16px; width: 16px; left: 0; top: 0; background-color: white; transition: .3s; }
+#on_off .switch_slider input:checked + .slider { background-color: #27B412; }
+#on_off .switch_slider input:focus + .slider { box-shadow: 0 0 1px #27B412; }
+#on_off input:checked + .slider:before { -webkit-transform: translateX(26px); -ms-transform: translateX(26px); transform: translateX(26px); }
+
+footer { margin: 40px; padding: 20px; border-top: #ccc 1px dotted; color: #666; font-size: 0.6rem; text-align: center; }
+
+.clearfix::after { content: ""; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
 
 /*# sourceMappingURL=calc_style.css.map */

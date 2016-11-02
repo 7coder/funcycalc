@@ -48,7 +48,7 @@ window.onload = function(){
 	
 					firstArgument += digitsShow;
 
-					console.log('firstfirstArgument =', firstArgument, action, secondArgument);
+					console.log('firstArgument =', firstArgument, action, secondArgument);
 
 					//Limit of numbers in Calculator Display for FirstArgument
 
@@ -227,7 +227,7 @@ window.onload = function(){
 					calcValue.innerHTML = 'LOL!';
 					firstArgument = '';
 
-				} else if (resultOverall.toString().length > 13){
+				} else if (calcValue.innerHTML.length > 13){
 
 					// Add 'animate_top' css class for popup block
 
