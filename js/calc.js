@@ -48,8 +48,6 @@ window.onload = function(){
 	
 					firstArgument += digitsShow;
 
-					console.log('firstArgument =', firstArgument, action, secondArgument);
-
 					//Limit of numbers in Calculator Display for FirstArgument
 
 					if(firstArgument.length < 7){
@@ -60,8 +58,6 @@ window.onload = function(){
 
 				} else {
 					secondArgument += digitsShow;
-
-					console.log('secondArgument =', firstArgument, action, secondArgument);
 
 					//Limit of numbers in Calculator Display for SecondArgument
 
@@ -85,8 +81,6 @@ window.onload = function(){
 				if(resultOverall !== undefined && secondArgument !== ''){
 					resultToFirstArgument (resultOverall);
 				};
-
-				console.log('before =', firstArgument, action, secondArgument);
 
 				//Show Sign value in Div container, when U clicked on button
 
@@ -191,8 +185,6 @@ window.onload = function(){
 						break;
 					}
 				};
-
-				console.log('after =', firstArgument, action, secondArgument, resultOverall);
 				
 				calcValue.innerHTML = (Math.round(resultOverall * 1000)/1000);
 
