@@ -293,7 +293,7 @@ h2{
 	  	right: 0;
 	  	bottom: 0;
 	  	background-color: #eee;
-	  	transition: .3s;	
+	  	transition: .15s;	
 	}
 
 	.slider:before {
@@ -304,10 +304,10 @@ h2{
 		left: 0;
 		top: 0;
 		background-color: white;
-		transition: .3s;
+		transition: .15s;
 	}
 
-	.switch_slider input:checked + .slider {
+	.switch_slider input.checked + .slider {
 		background-color: #27B412;
 	}
 	
@@ -315,7 +315,7 @@ h2{
  		box-shadow: 0 0 1px #27B412;
 	}
 
-	input:checked + .slider:before {
+	.switch_slider input.checked + .slider:before {
 	  -webkit-transform: translateX(26px);
 	  -ms-transform: translateX(26px);
 	  transform: translateX(26px);

@@ -1,4 +1,4 @@
-window.onload = function(){
+window.onload = function (){
 
 	var doc = document;
 		calcValue = doc.getElementById('calc_value'),
@@ -13,6 +13,7 @@ window.onload = function(){
 		onOff = doc.getElementById('check'),
 		action = firstArgument = secondArgument = calcValue.innerHTML = "",
 		resultOverall = 0;
+
 
 	//Function "Do another action after result"
 
@@ -32,9 +33,12 @@ window.onload = function(){
 		
 	};
 
+
 	onOff.onchange = function (){
 
 		if (onOff.checked){
+
+			onOff.classList.add('checked');
 
 			calcValue.innerHTML = 0;
 			
@@ -247,14 +251,44 @@ window.onload = function(){
 			};
 
 		} else {
+
+			clearAll();
+
 			calcValue.innerHTML = '';
+			
+			onOff.classList.remove('checked');
+
+			for (var i = 0; i < digits.length; i++) {	
+
+					digits[i].onclick = null;
+			};
+
+			for (var i = 0; i < actions.length; i++) {	
+
+					actions[i].onclick = null;
+			};
+
+			for (var i = 0; i < sign.length; i++) {	
+
+					sign[i].onclick = null;
+			};
+
+			for (var i = 0; i < percent.length; i++) {	
+
+					percent[i].onclick = null;
+			};
+
+			for (var i = 0; i < result.length; i++) {	
+
+					result[i].onclick = null;
+			};
+
+			for (var i = 0; i < reset.length; i++) {	
+
+					reset[i].onclick = null;
+			};
+
 		};
 
 	};
-
 };
-
-
-
- 
-
