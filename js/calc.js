@@ -40,7 +40,13 @@ window.onload = function (){
 
 			onOff.classList.add('checked');
 
-			calcValue.innerHTML = 0;
+			calcValue.innerHTML = 'Hello!';
+
+			function onHello(){
+				calcValue.innerHTML = 0;
+			};
+			
+			setTimeout(onHello, 700);
 			
 			// Initialization of number buttons
 
@@ -254,8 +260,14 @@ window.onload = function (){
 
 			clearAll();
 
-			calcValue.innerHTML = '';
+			calcValue.innerHTML = 'Bye bye!';
+
+			function offBye(){
+				calcValue.innerHTML = '';
+			};
 			
+			setTimeout(offBye, 700);
+
 			onOff.classList.remove('checked');
 
 			for (var i = 0; i < digits.length; i++) {	
