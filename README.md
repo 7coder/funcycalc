@@ -1,5 +1,7 @@
 # funcycalc
 
+## Pure JavaScript code without eval().
+
 Demo of FuncyCalc is available here https://7coder.github.io/funcycalc/
 
 Features
