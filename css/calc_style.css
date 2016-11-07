@@ -25,7 +25,7 @@ h2 { font-family: Verdana, Geneva, sans-serif; font-weight: 200; font-size: .85r
 
 #calc_wrap { border: #262626 5px solid; border-radius: 5px; width: 250px; padding: 20px; text-align: left; margin: 0 auto; background: #fff url(../img/lined_paper.png) repeat; background-size: 40%; position: relative; z-index: 2; }
 
-#calc_display { border: #262626 1px solid; margin: 0 0 20px 0; position: relative; font-size: 2.2rem; }
+#calc_display { border: #262626 1px solid; margin: 0 0 20px 0; position: relative; font-size: 2.2rem; background: #fff; }
 
 #calc_value { padding: 0 5px 0 20px; height: 50px; line-height: 50px; width: 224px; text-align: right; background: #fff; margin: 0; border: 0; background: 0; font-size: 2rem; }
 #calc_value .event_text { padding: 5px 5px 0 0; font-size: 0.8rem; line-height: 1.2rem; }
@@ -72,6 +72,23 @@ h2 { font-family: Verdana, Geneva, sans-serif; font-weight: 200; font-size: .85r
 #on_off .switch_slider input.checked + .slider { background-color: #27B412; }
 #on_off .switch_slider input:focus + .slider { box-shadow: 0 0 1px #27B412; }
 #on_off .switch_slider input.checked + .slider:before { -webkit-transform: translateX(26px); -ms-transform: translateX(26px); transform: translateX(26px); }
+
+/* NotesCalc */
+#note_container { float: right; width: 400px; height: 450px; border: #333 solid 5px; border-radius: 5px; position: relative; }
+
+#button_send { width: 60px; height: 60px; text-align: center; line-height: 60px; background: #e5dec2; cursor: pointer; float: left; margin-top: 50px; }
+
+#note_have_entries { height: 40px; line-height: 40px; text-align: center; font-style: italic; }
+
+.note_item_wrap { height: 40px; border-bottom: #aaa 1px solid; }
+
+.note_item_wrap:nth-child(even) { background: #f1f1f1; }
+
+.note_item_value { width: 99px; height: 40px; float: left; line-height: 40px; text-align: center; border-right: #aaa 1px solid; }
+
+.note_item_decs { float: left; width: 280px; height: 40px; line-height: 40px; padding: 0 10px; }
+
+#note_result_container { background: #fff; height: 40px; line-height: 40px; position: absolute; bottom: 0; left: 0; width: 360px; padding: 0 20px; }
 
 footer { margin: 40px; padding: 20px; border-top: #ccc 1px dotted; color: #666; font-size: 0.6rem; text-align: center; }
 
