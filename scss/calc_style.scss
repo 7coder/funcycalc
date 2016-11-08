@@ -374,6 +374,10 @@ h2{
 	position: relative;
 }
 
+.note_item_wrap button{
+	position: absolute;
+}
+
 .note_item_wrap:hover{
 	background: #FFFFD4;
 	transition: .3s ease;

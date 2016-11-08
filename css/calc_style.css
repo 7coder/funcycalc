@@ -84,6 +84,8 @@ h2 { font-family: Verdana, Geneva, sans-serif; font-weight: 200; font-size: .85r
 
 .note_item_wrap { height: 40px; border-bottom: #aaa 1px solid; position: relative; }
 
+.note_item_wrap button { position: absolute; }
+
 .note_item_wrap:hover { background: #FFFFD4; transition: .3s ease; }
 
 .note_item_value { width: 120px; height: 40px; float: left; line-height: 40px; text-align: center; border-right: #aaa 1px solid; }

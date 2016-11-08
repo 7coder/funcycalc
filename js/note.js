@@ -10,14 +10,10 @@ $(function () {
 	'<div class="note_item_wrap clearfix">' + 
 	'<div class="note_item_value">{{value}}</div>' +
 	'<div class="note_item_decs">{{desc}}</div>' +
-	'<div class="note_item_control">' +
-	'<button class="remove">X</button></div>' +
-	'</div>';
+	'<button class="remove">X</button></div>';
 
 	function addEntry(noteItem){
-
 		$noteContainer.append(Mustache.render(noteLineTemplate, noteItem));
-
 	};
 
 	$('#button_send').on('click', function(){
@@ -42,5 +38,21 @@ $(function () {
 
 		$note_overall.html($overall);
 
+		$('.note_item_wrap').on('click', '.remove', function() {
+			
+			var $itemWrap = $(this).closest('div');
+			var $overallTotal = 0;
+			
+			$itemWrap.fadeOut(200, function() {
+				$(this).remove();	
+			}); 
+			
+			$overallTotal = $overall - Number(noteItem.value);	
+
+			$note_overall.html($overallTotal);
+		});
+
 	});
+
+	
 });
