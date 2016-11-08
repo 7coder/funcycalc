@@ -46,7 +46,7 @@ window.onload = function (){
 				calcValue.innerHTML = 0;
 			};
 			
-			setTimeout(onHello, 700);
+			setTimeout(onHello, 500);
 			
 			// Initialization of number buttons
 
@@ -266,7 +266,7 @@ window.onload = function (){
 				calcValue.innerHTML = '';
 			};
 			
-			setTimeout(offBye, 700);
+			setTimeout(offBye, 500);
 
 			onOff.classList.remove('checked');
 

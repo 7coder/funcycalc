@@ -53,13 +53,13 @@ h2{
 }
 
 #left{
-	width: 470px;
+	width: 170px;
 	text-align:center;
 }
 
 
 #right{
-	width:470px;
+	width: 620px;
 	font-family: Verdana, Geneva, sans-serif;
 
 	h2{
@@ -128,7 +128,7 @@ h2{
 
 
 #calc_value.from7to10{
-	font-size: 2rem;
+	font-size: 1.8rem;
 }
 
 #calc_operation{
@@ -226,7 +226,7 @@ h2{
 		position: absolute;
 		width: 300px;
 		height: 170px;
-		left: 84px;
+		left: 0;
 		top:0;
 		z-index: 0;
 		margin-top: 0;
@@ -328,23 +328,37 @@ h2{
 
 #note_container{
 	float: right;
-	width: 400px;
+	width: 470px;
 	height: 450px;
 	border: #333 solid 5px;
 	border-radius: 5px;
 	position: relative;
+	background: transparent url(../img/old_mathematics.png) 0 0 repeat;
+	background-size: 30%;
 
 }
 
 #button_send{
-	width:60px;
-	height:60px;
-	text-align: center;
-	line-height: 60px;
-	background:$buttonColor;
+	width: 100px;
+	height: 45px;
+	background: #27B412;
+	color: #fff;
 	cursor: pointer;
 	float: left;
-	margin-top: 50px;
+	margin-top: 56px;
+	padding: 5px 10px 0 10px;
+	position: relative;
+}
+
+#button_send:after{
+	content: '->';
+	display: block;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	margin-top: -10px;
 }
 
 #note_have_entries{
@@ -357,14 +371,16 @@ h2{
 .note_item_wrap{
 	height:40px;
 	border-bottom:#aaa 1px solid;
+	position: relative;
 }
 
-.note_item_wrap:nth-child(even){
-	background: #f1f1f1;
+.note_item_wrap:hover{
+	background: #FFFFD4;
+	transition: .3s ease;
 }
 
 .note_item_value{
-	width: 99px;
+	width: 120px;
 	height: 40px;
 	float: left;
 	line-height: 40px;
@@ -374,10 +390,12 @@ h2{
 
 .note_item_decs{
 	float: left;
-	width: 280px;
+	width: 328px;
 	height: 40px;
 	line-height: 40px;
-	padding: 0 10px
+	padding: 0 10px;
+	font-style: italic;
+	color: #ff4433;
 }
 
 #note_result_container{
@@ -387,7 +405,7 @@ h2{
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	width: 360px;
+	width: 430px;
 	padding: 0 20px;
 
 }
