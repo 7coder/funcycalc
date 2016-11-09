@@ -6,6 +6,7 @@ $(function () {
 		$note_overall = $('#note_overall'),
 		noteItemList = {},
 		overall = counterId = 0;
+		
 
 
 	//Item line Mustach.js template
@@ -37,6 +38,14 @@ $(function () {
 		noteItemList[id] = noteItem;
 	};
 
+	//The number of free entries
+	function showFreeEntries(){
+		var entriesNumbers = Number($('#note_have_entries').html());
+
+		entriesNumbers = 10 - $('.note_item_wrap').length;
+		$('#note_have_entries').html(entriesNumbers);
+	};
+
 	// Initialization of Send Value button
 	$('#button_send').on('click', function(){
 		var noteItem, 
@@ -53,6 +62,8 @@ $(function () {
 			addEntry(newId, noteItem);
 		};
 		
+		showFreeEntries();		
+
 		overall += Number(noteItem.value);
 
 		$note_overall.html(overall);
@@ -70,7 +81,6 @@ $(function () {
 			$itemWrap.fadeOut(100, function() {
 				$itemWrap.remove();	
 				delete noteItemList[wrapperId];
-				console.log(noteItemList);
 			}); 
 
 			overall -= Number(wrapperValue);

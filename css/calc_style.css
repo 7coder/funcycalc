@@ -94,8 +94,10 @@ h2 { font-family: Verdana, Geneva, sans-serif; font-weight: 200; font-size: .85r
 
 #note_result_container { background: #fff; height: 40px; line-height: 40px; position: absolute; bottom: 0; left: 0; width: 430px; padding: 0 20px; }
 
+#note_result { width: 400px; }
+
 footer { margin: 40px; padding: 20px; border-top: #ccc 1px dotted; color: #666; font-size: 0.6rem; text-align: center; }
 
-.clearfix::after { content: ""; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+.clearfix::after, .clearfix::before { content: ""; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
 
 /*# sourceMappingURL=calc_style.css.map */

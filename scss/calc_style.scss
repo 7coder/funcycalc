@@ -414,6 +414,10 @@ h2{
 
 }
 
+#note_result{
+	width: 400px;
+}
+
 
 footer{
 	margin: 40px;
@@ -424,7 +428,7 @@ footer{
 	text-align: center;
 }
 
-.clearfix::after {
+.clearfix::after, .clearfix::before {
     content: "";
     display: block;
     height: 0;
