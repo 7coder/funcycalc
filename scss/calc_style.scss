@@ -375,7 +375,27 @@ h2{
 }
 
 .note_item_wrap button{
-	position: absolute;
+	float: left;
+}
+
+.note_item_wrap.edit_item .desc_text_edit,
+.note_item_wrap.edit_item .save,
+.note_item_wrap.edit_item .cancel,
+.note_item_wrap.add_new .save,
+.note_item_wrap.add_new .desc_text_edit,
+.note_item_wrap .desc_text{
+	display:block;
+}
+
+.note_item_wrap.edit_item .desc_text,
+.note_item_wrap.edit_item .edit,
+.note_item_wrap .cancel,
+.note_item_wrap .save,
+.note_item_wrap .desc_text_edit,
+.note_item_wrap.add_new .desc_text,
+.note_item_wrap.add_new .cancel,
+.note_item_wrap.add_new .edit{
+	display:none;
 }
 
 .note_item_wrap:hover{
@@ -417,6 +437,15 @@ h2{
 #note_result{
 	width: 400px;
 }
+
+.note_controls{
+	position: absolute;
+	top: -20px;
+	right: 0;
+	width:250px;
+	background: white;
+}
+
 
 
 footer{
