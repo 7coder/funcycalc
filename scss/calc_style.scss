@@ -372,35 +372,54 @@ h2{
 	height:40px;
 	border-bottom:#aaa 1px solid;
 	position: relative;
+	opacity: 1;
 }
 
 .note_item_wrap button{
 	float: left;
 }
 
-.note_item_wrap.edit_item .desc_text_edit,
-.note_item_wrap.edit_item .save,
-.note_item_wrap.edit_item .cancel,
-.note_item_wrap.add_new .save,
-.note_item_wrap.add_new .desc_text_edit,
-.note_item_wrap .desc_text{
-	display:block;
+.desc_input{
+	margin: 6px 0 0 0;
+	height: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: .75rem;
+	width: 300px;
+	padding: 2px 20px 2px 2px;
 }
 
-.note_item_wrap.edit_item .desc_text,
-.note_item_wrap.edit_item .edit,
-.note_item_wrap .cancel,
-.note_item_wrap .save,
-.note_item_wrap .desc_text_edit,
-.note_item_wrap.add_new .desc_text,
-.note_item_wrap.add_new .cancel,
-.note_item_wrap.add_new .edit{
+.note_item_wrap.add_new .no_edit,
+.note_item_wrap.edit_item .no_edit,
+.note_item_wrap .edit{
 	display:none;
+}
+
+.note_item_wrap.edit_item .edit,
+.note_item_wrap.add_new .edit{
+	display:block;
 }
 
 .note_item_wrap:hover{
 	background: #FFFFD4;
-	transition: .3s ease;
+	transition: .4s ease;
+}
+
+.note_controls{
+	position: absolute;
+	top: -30px;
+	right: -1px;
+	background: #FFFFD4;
+	padding: 5px;
+	opacity: 0;
+	z-index: -1;
+}
+
+.note_item_wrap:hover .note_controls{
+	opacity: 1;
+	z-index: 1;
+	transition: .4s ease;
+	
 }
 
 .note_item_value{
@@ -418,8 +437,15 @@ h2{
 	height: 40px;
 	line-height: 40px;
 	padding: 0 10px;
-	font-style: italic;
-	color: #ff4433;
+	position: relative;
+}
+
+.limit_characters{
+	position: absolute;
+	font-size: .5rem;
+	right: 18px;
+	top: 14px;
+	line-height: 12px;
 }
 
 #note_result_container{
@@ -437,16 +463,6 @@ h2{
 #note_result{
 	width: 400px;
 }
-
-.note_controls{
-	position: absolute;
-	top: -20px;
-	right: 0;
-	width:250px;
-	background: white;
-}
-
-
 
 footer{
 	margin: 40px;

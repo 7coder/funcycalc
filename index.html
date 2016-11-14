@@ -77,6 +77,26 @@
 			<div id="button_send">Send value<br/>to note</div>
 			<div id="note_container">
 				
+				<!-- Item line Mustach.js template -->
+				
+				<script type="text/template" id="note_line_template">
+					<div data-id="{{id}}" class="note_item_wrap add_new clearfix"> 
+						<div class="note_item_value">{{value}}</div>
+						<div class="note_item_decs">
+							<div class="desc_text no_edit">{{desc}}</div>
+							<input type="text" placeholder="Desciption" class="desc_input edit" maxlength="50">
+							<!-- <div class="limit_characters edit">50</div> -->
+							<div class="note_controls clearfix">
+								<button class="save edit">Save</button>
+								<button class="cancel edit">Cancel</button>
+								<button class="edit_desc no_edit">Edit</button>
+								<button class="remove">Delete</button>
+							</div>
+						</div>
+					</div>
+				</script>
+				
+				<!-- /Item line Mustach.js template -->
 
 				<div id="note_result_container" class="clearfix">
 					<div id="note_result" class="fl_left">
