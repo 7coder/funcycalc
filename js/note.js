@@ -48,7 +48,7 @@ $(function () {
 			inputVal = inputClass.val(),
 			symbols = parseInt(maxChar - inputVal.length);
 			
-			$('.limit_characters').html(symbols);
+			inputClass.next('.limit_characters').html(symbols);
 	};
 
 
@@ -64,7 +64,7 @@ $(function () {
 			noteItem = createNoteItem($fCalcValue.html(), 'Description');
 			newId = counterId++;
 
-			if($fCalcValue.html() === ''){
+			if($fCalcValue.html() === '' || !$.isNumeric($fCalcValue.html())){
 				noteItem['value'] = 0;
 			}
 		
@@ -94,7 +94,7 @@ $(function () {
 			wrapperId = $itemWrap.data('id'),
 			wrapperValue = noteItemList[wrapperId]['value'];
 			
-		$itemWrap.fadeOut(100, function() {
+		$itemWrap.fadeOut(200, function() {
 			$itemWrap.remove();	
 			delete noteItemList[wrapperId];
 			showFreeEntries();
