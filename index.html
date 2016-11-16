@@ -74,15 +74,23 @@
 			</div>
 		</div>
 		<div id="right" class="fl_right">
-			<div id="button_send">Send value<br/>to note</div>
+			<div id="button_send">Send value</div>
 			<div id="note_container">
 				
 				<!-- Item line Mustach.js template -->
 				
 				<script type="text/template" id="note_line_template">
 					<div data-id="{{id}}" class="note_item_wrap add_new clearfix"> 
-						<div class="note_item_value">{{value}}</div>
-						<div class="note_item_decs">
+						<div class="note_currency fl_left">
+							<select class="currency_list">
+								<option value="0">-</option>
+								<option value="USD">&#36;</option>
+								<option value="EUR">&#8364;</option>
+								<option value="RUB">&#8381;</option>
+							</select>
+						</div>
+						<div class="note_item_value fl_left">{{value}}</div>
+						<div class="note_item_decs fl_left">
 							<div class="desc_text no_edit">{{desc}}</div>
 							<input type="text" placeholder="Desciption" class="desc_input edit" maxlength="50">
 							<div class="limit_characters edit">50</div>

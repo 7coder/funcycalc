@@ -74,9 +74,9 @@ h2 { font-family: Verdana, Geneva, sans-serif; font-weight: 200; font-size: .85r
 #on_off .switch_slider input.checked + .slider:before { -webkit-transform: translateX(26px); -ms-transform: translateX(26px); transform: translateX(26px); }
 
 /* NotesCalc */
-#note_container { float: right; width: 470px; height: 450px; border: #333 solid 5px; border-radius: 5px; position: relative; background: transparent url(../img/old_mathematics.png) 0 0 repeat; background-size: 30%; }
+#note_container { float: right; width: 520px; height: 450px; border: #333 solid 5px; border-radius: 5px; position: relative; background: transparent url(../img/old_mathematics.png) 0 0 repeat; background-size: 30%; }
 
-#button_send { width: 100px; height: 45px; background: #27B412; color: #fff; cursor: pointer; float: left; margin-top: 56px; padding: 5px 10px 0 10px; position: relative; }
+#button_send { width: 50px; height: 45px; background: #27B412; color: #fff; cursor: pointer; float: left; margin-top: 56px; padding: 5px 10px 0 10px; position: relative; }
 
 #button_send:after { content: '->'; display: block; width: 20px; height: 20px; position: absolute; top: 50%; right: 0; margin-top: -10px; }
 
@@ -98,13 +98,17 @@ h2 { font-family: Verdana, Geneva, sans-serif; font-weight: 200; font-size: .85r
 
 .note_item_wrap:hover .note_controls { opacity: 1; z-index: 1; transition: .4s ease; }
 
-.note_item_value { width: 120px; height: 40px; float: left; line-height: 40px; text-align: center; border-right: #aaa 1px solid; }
+.note_currency { width: 49px; height: 40px; text-align: center; border-right: #aaa 1px solid; }
 
-.note_item_decs { float: left; width: 328px; height: 40px; line-height: 40px; padding: 0 10px; position: relative; }
+.note_currency .currency_list { width: 40px; display: block; margin: 10px auto 0; font-size: .8rem; }
+
+.note_item_value { width: 120px; height: 40px; line-height: 40px; text-align: center; border-right: #aaa 1px solid; }
+
+.note_item_decs { width: 328px; height: 40px; line-height: 40px; padding: 0 10px; position: relative; }
 
 .limit_characters { position: absolute; font-size: .5rem; right: 18px; top: 14px; line-height: 12px; }
 
-#note_result_container { background: #fff; height: 40px; line-height: 40px; position: absolute; bottom: 0; left: 0; width: 430px; padding: 0 20px; }
+#note_result_container { background: #fff; height: 40px; line-height: 40px; position: absolute; bottom: 0; left: 0; width: 480px; padding: 0 20px; }
 
 #note_result { width: 400px; }
 

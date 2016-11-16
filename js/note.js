@@ -6,7 +6,13 @@ $(function () {
 		$noteOverall = $('#note_overall'),
 		noteLineTemplate = $('#note_line_template').html(),
 		noteItemList = {},
-		overall = counterId = 0;
+		outputObj = {
+				none: 0,
+				USD: 0,
+				EUR: 0,
+				RUB: 0				
+		},
+		counterId = overall = 0;
 		
 
 	// Initialization of Mustach.js
@@ -19,10 +25,11 @@ $(function () {
 
 
 	//New Object NoteItem
-	var createNoteItem = function(value, desc){
+	var createNoteItem = function(value, desc, cy){
 		return {
 				value: value,
 				desc: desc,
+				currency: cy
 				};
 	};
 
@@ -55,13 +62,17 @@ $(function () {
 	// Initialization of Send Value button
 	$('#button_send').on('click', function(){
 		var noteItem, 
-			newId;
+			newId,
+			$currencyValue = currency = '';
 
 		// The limit on the number of lines
 		if ($('.note_item_wrap').length >= 10){
+
 			return;
+
 		} else{
-			noteItem = createNoteItem($fCalcValue.html(), 'Description');
+
+			noteItem = createNoteItem($fCalcValue.html(), 'Description', $currencyValue);
 			newId = counterId++;
 
 			if($fCalcValue.html() === '' || !$.isNumeric($fCalcValue.html())){
@@ -72,17 +83,58 @@ $(function () {
 			addEntry(newId, noteItem);
 		};
 
-		showFreeEntries();		
-
-		overall += Number(noteItem.value);
-
-		$noteOverall.html(overall);
-
+		showFreeEntries();	
 
 		//Limit input
 		$('.desc_input').on('keyup', function(){
 			doLimitInput(this, 50);
 		});
+		
+
+		overall += Number(noteItem.value);
+
+		$noteOverall.html(overall);
+
+	});
+
+
+	//Initialization of currency select
+	$noteContainer.on('change', '.currency_list', function() {
+
+		var $itemWrap = $(this).closest('.note_item_wrap'),
+			$currencyValue = $(this).val(),
+			wrapperId = $itemWrap.data('id'),
+			outputValue = Number($(this).parent().next('.note_item_value').html()),
+			resultView = '';
+
+			
+			noteItemList[wrapperId]['currency'] = $currencyValue;
+
+			if($currencyValue === 'USD'){
+
+				outputObj['USD'] += outputValue;
+				
+
+			} else if ($currencyValue === 'EUR'){
+
+				outputObj['EUR'] += outputValue;
+				
+
+			} else if ($currencyValue === 'RUB'){
+
+				outputObj['RUB'] += outputValue;
+				
+			} else {
+
+				outputObj['none'] += outputValue;
+				
+			};
+
+
+
+			resultView = 'USD ' + outputObj['USD'] + ' EUR ' + outputObj['EUR'] + ' RUB ' + outputObj['RUB'] + ' | ' + outputObj['none'];
+
+			$noteOverall.html(resultView);
 
 	});
 

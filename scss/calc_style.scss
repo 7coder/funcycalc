@@ -328,7 +328,7 @@ h2{
 
 #note_container{
 	float: right;
-	width: 470px;
+	width: 520px;
 	height: 450px;
 	border: #333 solid 5px;
 	border-radius: 5px;
@@ -339,7 +339,7 @@ h2{
 }
 
 #button_send{
-	width: 100px;
+	width: 50px;
 	height: 45px;
 	background: #27B412;
 	color: #fff;
@@ -422,17 +422,30 @@ h2{
 	
 }
 
+.note_currency{
+	width: 49px;
+	height: 40px;
+	text-align: center;
+	border-right: #aaa 1px solid;
+}
+
+.note_currency .currency_list{
+	width: 40px;
+	display: block;
+	margin: 10px auto 0;
+	font-size: .8rem;
+
+}
+
 .note_item_value{
 	width: 120px;
 	height: 40px;
-	float: left;
 	line-height: 40px;
 	text-align: center;
 	border-right: #aaa 1px solid;
 }
 
 .note_item_decs{
-	float: left;
 	width: 328px;
 	height: 40px;
 	line-height: 40px;
@@ -455,7 +468,7 @@ h2{
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	width: 430px;
+	width: 480px;
 	padding: 0 20px;
 
 }
