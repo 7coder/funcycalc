@@ -6,12 +6,6 @@ $(function () {
 		$noteOverall = $('#note_overall'),
 		noteLineTemplate = $('#note_line_template').html(),
 		noteItemList = {},
-		outputObj = {
-				none: 0,
-				USD: 0,
-				EUR: 0,
-				RUB: 0				
-		},
 		counterId = overall = 0;
 		
 
@@ -58,12 +52,63 @@ $(function () {
 			inputClass.next('.limit_characters').html(symbols);
 	};
 
+	//Calculation OverAll
+	function calcOverall(){
+		var resultObj = {
+			none: 0
+		};
+
+		for (var key in noteItemList){
+			 var item = noteItemList[key];
+			
+			//Initialzation value
+			if(resultObj[item.currency] === undefined){
+				resultObj[item.currency] = 0;
+			}
+			
+			resultObj[item.currency] += Number(item.value);
+		} 
+
+		return resultObj;
+	};
+
+
+	//Show Currency Values
+	function showCurrencyValues(resultObj){
+		
+		var currencyList = {
+			none: '| ',
+			USD: '&#36; ',
+			EUR: '&#8364; ',
+			RUB: '&#8381; '
+			},
+			currencyArray = [],
+			currencyResult = '';
+
+		for (var key in resultObj){
+			if (key !== 'none'){
+				currencyArray.push(currencyList[key] + resultObj[key]);
+			};
+		};
+		
+		currencyResult = currencyArray.join(' , ');
+
+		if (currencyResult !== ''){
+			currencyResult += ' | ';
+		};
+
+		currencyResult += resultObj.none;
+
+		$noteOverall.html(currencyResult);
+
+	};
+
 
 	// Initialization of Send Value button
 	$('#button_send').on('click', function(){
 		var noteItem, 
 			newId,
-			$currencyValue = currency = '';
+			$currencyValue = currency = 'none';
 
 		// The limit on the number of lines
 		if ($('.note_item_wrap').length >= 10){
@@ -91,9 +136,9 @@ $(function () {
 		});
 		
 
-		overall += Number(noteItem.value);
+		var resultObj = calcOverall();
 
-		$noteOverall.html(overall);
+		showCurrencyValues(resultObj);
 
 	});
 
@@ -103,40 +148,17 @@ $(function () {
 
 		var $itemWrap = $(this).closest('.note_item_wrap'),
 			$currencyValue = $(this).val(),
-			wrapperId = $itemWrap.data('id'),
-			outputValue = Number($(this).parent().next('.note_item_value').html()),
-			resultView = '';
-
+			wrapperId = $itemWrap.data('id');
 			
 			noteItemList[wrapperId]['currency'] = $currencyValue;
 
-			if($currencyValue === 'USD'){
+			var resultObj = calcOverall();
 
-				outputObj['USD'] += outputValue;
-				
-
-			} else if ($currencyValue === 'EUR'){
-
-				outputObj['EUR'] += outputValue;
-				
-
-			} else if ($currencyValue === 'RUB'){
-
-				outputObj['RUB'] += outputValue;
-				
-			} else {
-
-				outputObj['none'] += outputValue;
-				
-			};
-
-
-
-			resultView = 'USD ' + outputObj['USD'] + ' EUR ' + outputObj['EUR'] + ' RUB ' + outputObj['RUB'] + ' | ' + outputObj['none'];
-
-			$noteOverall.html(resultView);
-
+			showCurrencyValues(resultObj);
+		
 	});
+
+
 
 	// Initialization of remove button
 	$noteContainer.on('click', '.note_item_wrap .remove', function() {
@@ -150,11 +172,9 @@ $(function () {
 			$itemWrap.remove();	
 			delete noteItemList[wrapperId];
 			showFreeEntries();
+			var resultObj = calcOverall();	
+			showCurrencyValues(resultObj);
 		}); 
-
-		overall -= Number(wrapperValue);
-
-		$noteOverall.html(overall);
 
 	});
 
