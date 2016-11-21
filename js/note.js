@@ -4,6 +4,7 @@ $(function () {
 	var $fCalcValue = $('#calc_value'),
 		$noteContainer = $('#note_container'),
 		$noteOverall = $('#note_overall'),
+		$clearNoteButton = $('#clear_note'),
 		noteLineTemplate = $('#note_line_template').html(),
 		noteItemList = {},
 		counterId = overall = 0;
@@ -105,7 +106,7 @@ $(function () {
 
 
 	// Initialization of Send Value button
-	$('#button_send').on('click', function(){
+	$('#button_send').on('click touch', function(){
 		var noteItem, 
 			newId,
 			$currencyValue = currency = 'none';
@@ -159,7 +160,6 @@ $(function () {
 	});
 
 
-
 	// Initialization of remove button
 	$noteContainer.on('click', '.note_item_wrap .remove', function() {
 
@@ -178,7 +178,6 @@ $(function () {
 
 	});
 
-	
 
 	// Initialization of save button
 	$noteContainer.on('click', '.note_item_wrap .save', function() {
@@ -200,19 +199,28 @@ $(function () {
 
 	});
 
+
 	// Initialization of edit button
 	$noteContainer.on('click', '.note_item_wrap .edit_desc', function() {
-
 
 		$(this).closest('.note_item_wrap').addClass('edit_item');
 	
 	});
+
 
 	// Initialization of cancel button
 	$noteContainer.on('click', '.note_item_wrap .cancel', function() {
 
 		$(this).closest('.note_item_wrap').removeClass('edit_item').removeClass('add_new');
 	
+	});
+
+
+	// Initialization of delete all entries button
+	$clearNoteButton.on('click', function() {
+		noteItemList = {};
+		$('.note_item_wrap').remove();
+		showFreeEntries();
 	});
 
 

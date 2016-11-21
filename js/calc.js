@@ -28,10 +28,7 @@ window.onload = function (){
 	function clearAll(){
 		resultOverall = calcValue.innerHTML = 0;
 		action = firstArgument = secondArgument = showSign.innerHTML = calcValue.className = '';
-		eventItem.classList.remove('animate_top', 'divide_on_zero');
-		eventItem.classList.remove('animate_right', 'lol');
-		eventItem.classList.remove('animate_right', 'too_long');
-		
+		eventItem.classList.remove('animate_top', 'divide_on_zero', 'lol', 'too_long');
 	};
 
 	
@@ -235,7 +232,7 @@ window.onload = function (){
 
 					// Add 'animate_right' css class for popup block
 
-					eventItem.classList.add('animate_right', 'lol');
+					eventItem.classList.add('animate_top', 'lol');
 					calcValue.innerHTML = 'LOL!';
 					firstArgument = '';
 
