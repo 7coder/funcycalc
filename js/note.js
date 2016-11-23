@@ -2,7 +2,6 @@ $(function () {
 	
 	//Cache DOM
 	var $fCalcValue = $('#calc_value'),
-		$valueInput = $('.value_input'),
 		$noteContainer = $('#note_container'),
 		$noteOverall = $('#note_overall'),
 		$clearNoteButton = $('#clear_note'),
@@ -227,12 +226,12 @@ $(function () {
 
 			if (numberInputValue === ''){
 
-				$itemWrap.find('.note_item_value').html('0');
+				$itemWrap.find('.value_text').html('0');
 
 			} else { 
 
 				noteItemList[wrapperId]['value'] = numberInputValue;
-				$itemWrap.find('.note_item_value').html(numberInputValue);
+				$itemWrap.find('.value_text ').html(numberInputValue);
 			
 			};
 

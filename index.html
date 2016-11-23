@@ -9,7 +9,6 @@
 	<link href="css/reset.css" type="text/css" rel="stylesheet" />
 	<link href="css/calc_style.css" type="text/css" rel="stylesheet" />
 	<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
-	<script src="js/jquery.mobile.min.js" type="text/javascript"></script>
 	<script src="js/mustache.min.js" type="text/javascript"></script>
 </head>
 <body>
@@ -95,7 +94,8 @@
 							</select>
 						</div>
 						<div class="note_item_value fl_left">
-							<input placeholder="Value" class="input value_input edit" maxlength="12" type="text" value="{{value}}">
+							<div class="value_text no_edit">{{value}}</div>
+							<input placeholder="Value" class="input value_input edit" maxlength="12" type="text" value="">
 						</div>
 						<div class="note_item_decs fl_left">
 							<div class="desc_text no_edit">{{desc}}</div>
