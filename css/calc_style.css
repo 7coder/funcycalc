@@ -1,124 +1,379 @@
 @import url("https://fonts.googleapis.com/css?family=Pacifico");
-body { text-align: center; color: #262626; background: #fff url(../img/ignasi_pattern_s.png) repeat; font: 13px/1.5 'Verdana', Geneva, sans-serif; }
+body {
+  text-align: center;
+  color: #262626;
+  background: #fff url(../img/ignasi_pattern_s.png) repeat;
+  font: 13px/1.5 'Verdana', Geneva, sans-serif; }
 
-#top { text-align: center; }
+#top {
+  text-align: center; }
 
-h1 { font-family: 'Pacifico', cursive; font-size: 2.5rem; margin: 20px auto; text-align: center; color: #006a91; text-shadow: #fff 1px 1px 0; }
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5rem;
+  margin: 20px auto;
+  text-align: center;
+  color: #006a91;
+  text-shadow: #fff 1px 1px 0; }
 
-h2 { font-family: Verdana, Geneva, sans-serif; font-weight: 200; font-size: .85rem; }
+h2 {
+  font-family: Verdana, Geneva, sans-serif;
+  font-weight: 200;
+  font-size: .85rem; }
 
-.fl_left { float: left; }
+.fl_left {
+  float: left; }
 
-.fl_right { float: right; }
+.fl_right {
+  float: right; }
 
-#wrap { text-align: left; width: 940px; margin: 0 auto; }
+#wrap {
+  text-align: left;
+  width: 940px;
+  margin: 0 auto; }
 
-#top { margin-bottom: 40px; }
+#top {
+  margin-bottom: 40px; }
 
-#left { padding-top: 25px; }
+#left {
+  padding-top: 25px; }
 
-#right { width: 620px; font-family: Verdana, Geneva, sans-serif; }
-#right h2 { font-size: 1.1rem; font-weight: bold; }
-#right h2, #right h3 { margin-bottom: 0px; text-shadow: #fff 1px 1px 0; }
-#right ul, #right #content h2, #content #right h2, #right #content h3, #content #right h3, #right p { margin-bottom: 15px; }
-#right ul li ul, #right #content h2 li ul, #content #right h2 li ul, #right #content h3 li ul, #content #right h3 li ul, #right ul li #content h2, #content #right ul li h2, #right #content h2 li h2, #content #right h2 li h2, #right #content h3 li h2, #content #right h3 li h2, #right ul li #content h3, #content #right ul li h3, #right #content h2 li h3, #content #right h2 li h3, #right #content h3 li h3, #content #right h3 li h3 { margin-left: 20px; }
-#right #control_panel { height: 25px; }
-#right #control_panel #clear_note { float: right; }
+#right {
+  width: 620px;
+  font-family: Verdana, Geneva, sans-serif; }
+  #right h2 {
+    font-size: 1.1rem;
+    font-weight: bold; }
+  #right h2, #right h3 {
+    margin-bottom: 0px;
+    text-shadow: #fff 1px 1px 0; }
+  #right ul, #right #content h2, #content #right h2, #right #content h3, #content #right h3, #right p {
+    margin-bottom: 15px; }
+  #right ul li ul, #right #content h2 li ul, #content #right h2 li ul, #right #content h3 li ul, #content #right h3 li ul, #right ul li #content h2, #content #right ul li h2, #right #content h2 li h2, #content #right h2 li h2, #right #content h3 li h2, #content #right h3 li h2, #right ul li #content h3, #content #right ul li h3, #right #content h2 li h3, #content #right h2 li h3, #right #content h3 li h3, #content #right h3 li h3 {
+    margin-left: 20px; }
+  #right #control_panel {
+    height: 25px; }
+    #right #control_panel #clear_note {
+      float: right; }
 
-#calc_wrap { border: #262626 5px solid; border-radius: 5px; width: 250px; padding: 20px; text-align: left; margin: 0 auto; background: #fff url(../img/lined_paper.png) repeat; background-size: 40%; position: relative; z-index: 2; }
+#calc_wrap {
+  border: #262626 5px solid;
+  border-radius: 5px;
+  width: 250px;
+  padding: 20px;
+  text-align: left;
+  margin: 0 auto;
+  background: #fff url(../img/lined_paper.png) repeat;
+  background-size: 40%;
+  position: relative;
+  z-index: 2; }
 
-#calc_display { border: #262626 1px solid; margin: 0 0 20px 0; position: relative; font-size: 2.2rem; background: #fff; }
+#calc_display {
+  border: #262626 1px solid;
+  margin: 0 0 20px 0;
+  position: relative;
+  font-size: 2.2rem;
+  background: #fff; }
 
-#calc_value { padding: 0 5px 0 20px; height: 50px; line-height: 50px; width: 224px; text-align: right; background: #fff; margin: 0; border: 0; background: 0; font-size: 2rem; }
-#calc_value .event_text { padding: 5px 5px 0 0; font-size: 0.8rem; line-height: 1.2rem; }
+#calc_value {
+  padding: 0 5px 0 20px;
+  height: 50px;
+  line-height: 50px;
+  width: 224px;
+  text-align: right;
+  background: #fff;
+  margin: 0;
+  border: 0;
+  background: 0;
+  font-size: 2rem; }
+  #calc_value .event_text {
+    padding: 5px 5px 0 0;
+    font-size: 0.8rem;
+    line-height: 1.2rem; }
 
-#calc_value.to_much, #calc_value.from10to13 { font-size: 1.4rem; }
+#calc_value.to_much,
+#calc_value.from10to13 {
+  font-size: 1.4rem; }
 
-#calc_value.from7to10 { font-size: 1.8rem; }
+#calc_value.from7to10 {
+  font-size: 1.8rem; }
 
-#calc_operation { position: absolute; top: 0; left: 0; width: 58px; height: 50px; line-height: 46px; font-size: 1.4rem; text-align: center; background: #e1e1e1; }
+#calc_operation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 58px;
+  height: 50px;
+  line-height: 46px;
+  font-size: 1.4rem;
+  text-align: center;
+  background: #e1e1e1; }
 
-.buttons { font-size: 1.2rem; }
-.buttons li { background: #e5dec2; display: block; height: 60px; width: 60px; line-height: 60px; text-align: center; margin: 0 1px 1px 0; cursor: pointer; }
-.buttons li:hover { background: #262626; transition: all 0.3s ease; color: #fff; }
+.buttons {
+  font-size: 1.2rem; }
+  .buttons li {
+    background: #e5dec2;
+    display: block;
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    text-align: center;
+    margin: 0 1px 1px 0;
+    cursor: pointer; }
+  .buttons li:hover {
+    background: #262626;
+    transition: all 0.3s ease;
+    color: #fff; }
 
-#math { margin: 0 0 5px 0; }
-#math li { float: left; margin-right: 1px; border: none; }
+#math {
+  margin: 0 0 5px 0; }
+  #math li {
+    float: left;
+    margin-right: 1px;
+    border: none; }
 
-#math_2 { margin-bottom: 0; }
-#math_2 li { border: none; margin: 0 0 1px 0; }
-#math_2 li:first-child { margin-bottom: 6px; }
-#math_2 .reset { background: #f18f00; }
-#math_2 .reset:hover { background: #cd7a00; }
-#math_2 .result { background: #006a91; }
-#math_2 .result:hover { background: #00506d; }
+#math_2 {
+  margin-bottom: 0; }
+  #math_2 li {
+    border: none;
+    margin: 0 0 1px 0; }
+  #math_2 li:first-child {
+    margin-bottom: 6px; }
+  #math_2 .reset {
+    background: #f18f00; }
+  #math_2 .reset:hover {
+    background: #cd7a00; }
+  #math_2 .result {
+    background: #006a91; }
+  #math_2 .result:hover {
+    background: #00506d; }
 
-#numbers { width: 190px; background: black; }
-#numbers li { float: left; }
+#numbers {
+  width: 190px;
+  background: black; }
+  #numbers li {
+    float: left; }
 
-#events { position: relative; height: 0; }
-#events #event_item { position: absolute; width: 300px; height: 170px; left: 0; top: 0; z-index: 0; margin-top: 0; margin-right: 0; background-color: transparent; background-image: url(../img/funcycalc.png); background-repeat: no-repeat; }
-#events #event_item.animate_top { margin-top: -170px; transition: margin-top 0.2s cubic-bezier(0.08, 0.67, 0.51, 0.9); }
-#events .divide_on_zero { background-position: -170px 0; }
-#events .lol { background-position: 120px 0; }
-#events .too_long { background-position: -470px 0; }
+#events {
+  position: relative;
+  height: 0; }
+  #events #event_item {
+    position: absolute;
+    width: 300px;
+    height: 170px;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    margin-top: 0;
+    margin-right: 0;
+    background-color: transparent;
+    background-image: url(../img/funcycalc.png);
+    background-repeat: no-repeat; }
+    #events #event_item.animate_top {
+      margin-top: -170px;
+      transition: margin-top 0.2s cubic-bezier(0.08, 0.67, 0.51, 0.9); }
+  #events .divide_on_zero {
+    background-position: -170px 0; }
+  #events .lol {
+    background-position: 120px 0; }
+  #events .too_long {
+    background-position: -470px 0; }
 
-#on_off { margin-bottom: 10px; }
-#on_off li { float: left; width: 32px; text-align: center; height: 20px; }
-#on_off li:nth-child(2) { width: 50px; }
-#on_off .switch_slider { position: relative; display: inline-block; width: 42px; height: 16px; border: #ccc 2px solid; }
-#on_off .switch_slider input { display: none; }
-#on_off .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #eee; transition: .15s; }
-#on_off .slider:before { position: absolute; content: ""; height: 16px; width: 16px; left: 0; top: 0; background-color: white; transition: .15s; }
-#on_off .switch_slider input.checked + .slider { background-color: #27B412; }
-#on_off .switch_slider input:focus + .slider { box-shadow: 0 0 1px #27B412; }
-#on_off .switch_slider input.checked + .slider:before { -webkit-transform: translateX(26px); -ms-transform: translateX(26px); transform: translateX(26px); }
+#on_off {
+  margin-bottom: 10px; }
+  #on_off li {
+    float: left;
+    width: 32px;
+    text-align: center;
+    height: 20px; }
+  #on_off li:nth-child(2) {
+    width: 50px; }
+  #on_off .switch_slider {
+    position: relative;
+    display: inline-block;
+    width: 42px;
+    height: 16px;
+    border: #ccc 2px solid; }
+  #on_off .switch_slider input {
+    display: none; }
+  #on_off .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #eee;
+    transition: .15s; }
+  #on_off .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 0;
+    top: 0;
+    background-color: white;
+    transition: .15s; }
+  #on_off .switch_slider input.checked + .slider {
+    background-color: #27B412; }
+  #on_off .switch_slider input:focus + .slider {
+    box-shadow: 0 0 1px #27B412; }
+  #on_off .switch_slider input.checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px); }
 
 /* NotesCalc */
-#note_container { float: right; width: 520px; height: 450px; border: #333 solid 5px; border-radius: 5px; position: relative; background: transparent url(../img/old_mathematics.png) 0 0 repeat; background-size: 30%; }
+#note_container {
+  float: right;
+  width: 520px;
+  height: 450px;
+  border: #333 solid 5px;
+  border-radius: 5px;
+  position: relative;
+  background: transparent url(../img/old_mathematics.png) 0 0 repeat;
+  background-size: 30%; }
 
-#button_send { width: 50px; height: 45px; background: #27B412; color: #fff; cursor: pointer; float: left; margin-top: 56px; padding: 5px 10px 0 10px; position: relative; }
+#button_send {
+  width: 50px;
+  height: 45px;
+  background: #27B412;
+  color: #fff;
+  cursor: pointer;
+  float: left;
+  margin-top: 56px;
+  padding: 5px 10px 0 10px;
+  position: relative; }
 
-#button_send:after { content: '->'; display: block; width: 20px; height: 20px; position: absolute; top: 50%; right: 0; margin-top: -10px; }
+#button_send:after {
+  content: '->';
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -10px; }
 
-#note_have_entries { height: 40px; line-height: 40px; text-align: center; font-style: italic; }
+#note_have_entries {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-style: italic; }
 
-.note_item_wrap { height: 40px; border-bottom: #aaa 1px solid; position: relative; opacity: 1; }
+.note_item_wrap {
+  height: 40px;
+  border-bottom: #aaa 1px solid;
+  position: relative;
+  opacity: 1; }
 
-.note_item_wrap button { float: left; }
+.note_item_wrap button {
+  float: left; }
 
-.desc_input { margin: 6px 0 0 0; height: 20px; line-height: 20px; display: block; font-size: .75rem; width: 300px; padding: 2px 20px 2px 2px; }
+.desc_input {
+  margin: 6px 0 0 0;
+  height: 20px;
+  line-height: 20px;
+  display: block;
+  font-size: .75rem;
+  width: 300px;
+  padding: 2px 20px 2px 2px; }
 
-.note_item_wrap.add_new .no_edit, .note_item_wrap.edit_item .no_edit, .note_item_wrap .edit { display: none; }
+.note_item_wrap.add_new .no_edit,
+.note_item_wrap.edit_item .no_edit,
+.note_item_wrap .edit {
+  display: none; }
 
-.note_item_wrap.edit_item .edit, .note_item_wrap.add_new .edit { display: block; }
+.note_item_wrap.edit_item .edit,
+.note_item_wrap.add_new .edit {
+  display: block; }
 
-.note_item_wrap:hover { background: #FFFFD4; transition: .4s ease; }
+.note_item_wrap:hover {
+  background: #FFFFD4;
+  transition: .4s ease; }
 
-.note_controls { position: absolute; top: -30px; right: -1px; background: #FFFFD4; padding: 5px; opacity: 0; z-index: -1; height: 20px; }
+.note_controls {
+  position: absolute;
+  top: -30px;
+  right: -1px;
+  background: #FFFFD4;
+  padding: 5px;
+  opacity: 0;
+  z-index: -1;
+  height: 20px; }
 
-.note_item_wrap:hover .note_controls { opacity: 1; z-index: 1; transition: .4s ease; }
+.note_item_wrap:hover .note_controls {
+  opacity: 1;
+  z-index: 1;
+  transition: .4s ease; }
 
-.note_currency { width: 49px; height: 40px; text-align: center; border-right: #aaa 1px solid; }
+.note_currency {
+  width: 49px;
+  height: 40px;
+  text-align: center;
+  border-right: #aaa 1px solid; }
 
-.note_currency .currency_list { width: 40px; display: block; margin: 10px auto 0; font-size: .8rem; }
+.note_currency .currency_list {
+  width: 40px;
+  display: block;
+  margin: 10px auto 0;
+  font-size: .8rem; }
 
-.note_item_value { width: 120px; height: 40px; line-height: 40px; text-align: center; border-right: #aaa 1px solid; }
+.note_item_value {
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-right: #aaa 1px solid; }
 
-.note_item_decs { width: 328px; height: 40px; line-height: 40px; padding: 0 10px; position: relative; }
+.note_item_decs {
+  width: 328px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px;
+  position: relative; }
 
-.limit_characters { position: absolute; font-size: .5rem; right: 18px; top: 14px; line-height: 12px; }
+.limit_characters {
+  position: absolute;
+  font-size: .5rem;
+  right: 18px;
+  top: 14px;
+  line-height: 12px; }
 
-#note_result_container { background: #fff; height: 40px; line-height: 40px; position: absolute; bottom: 0; left: 0; width: 480px; padding: 0 20px; }
+#note_result_container {
+  background: #fff;
+  height: 40px;
+  line-height: 40px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 480px;
+  padding: 0 20px; }
 
-#note_result { width: 400px; }
+#note_result {
+  width: 400px; }
 
-#content { padding-top: 40px; }
-#content ul, #content h2, #content h3 { margin-bottom: 20px; }
-#content h2 { font-size: 1.5rem; }
+#content {
+  padding-top: 40px; }
+  #content ul, #content h2, #content h3 {
+    margin-bottom: 20px; }
+  #content h2 {
+    font-size: 1.5rem; }
 
-footer { margin: 40px; padding: 20px; border-top: #ccc 1px dotted; color: #666; font-size: 0.6rem; text-align: center; }
+footer {
+  margin: 40px;
+  padding: 20px;
+  border-top: #ccc 1px dotted;
+  color: #666;
+  font-size: 0.6rem;
+  text-align: center; }
 
-.clearfix::after, .clearfix::before { content: ""; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+.clearfix::after, .clearfix::before {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden; }
 
 /*# sourceMappingURL=calc_style.css.map */
