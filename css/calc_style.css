@@ -41,16 +41,6 @@ h2 {
 #right {
   width: 620px;
   font-family: Verdana, Geneva, sans-serif; }
-  #right h2 {
-    font-size: 1.1rem;
-    font-weight: bold; }
-  #right h2, #right h3 {
-    margin-bottom: 0px;
-    text-shadow: #fff 1px 1px 0; }
-  #right ul, #right #content h2, #content #right h2, #right #content h3, #content #right h3, #right p {
-    margin-bottom: 15px; }
-  #right ul li ul, #right #content h2 li ul, #content #right h2 li ul, #right #content h3 li ul, #content #right h3 li ul, #right ul li #content h2, #content #right ul li h2, #right #content h2 li h2, #content #right h2 li h2, #right #content h3 li h2, #content #right h3 li h2, #right ul li #content h3, #content #right ul li h3, #right #content h2 li h3, #content #right h2 li h3, #right #content h3 li h3, #content #right h3 li h3 {
-    margin-left: 20px; }
   #right #control_panel {
     height: 25px;
     padding-left: 90px; }
