@@ -134,7 +134,7 @@ $(function () {
 
 
 	// Initialization of Send Value button
-	$('#button_send').on('click', function(){
+	$('#button_send').on('click tap', function(){
 		var noteItem, 
 			newId,
 			$currencyValue = currency = 'none';
@@ -191,7 +191,7 @@ $(function () {
 
 
 	// Initialization of remove button
-	$noteContainer.on('click', '.note_item_wrap .remove', function() {
+	$noteContainer.on('click tap', '.note_item_wrap .remove', function() {
 
 		var $self = $(this),
 			$itemWrap = $self.closest('.note_item_wrap'),
@@ -210,7 +210,7 @@ $(function () {
 
 
 	// Initialization of save button
-	$noteContainer.on('click', '.note_item_wrap .save', function() {
+	$noteContainer.on('click tap', '.note_item_wrap .save', function() {
 		
 		var $itemWrap = $(this).closest('.note_item_wrap'),
 			descInputValue = $itemWrap.find('.desc_input').val(),
@@ -248,7 +248,7 @@ $(function () {
 
 
 	// Initialization of edit button
-	$noteContainer.on('click', '.note_item_wrap .edit_desc', function() {
+	$noteContainer.on('click tap', '.note_item_wrap .edit_desc', function() {
 
 		$(this).closest('.note_item_wrap').addClass('edit_item');
 	
@@ -256,7 +256,7 @@ $(function () {
 
 
 	// Initialization of cancel button
-	$noteContainer.on('click', '.note_item_wrap .cancel', function() {
+	$noteContainer.on('click tap', '.note_item_wrap .cancel', function() {
 
 		$(this).closest('.note_item_wrap').removeClass('edit_item').removeClass('add_new');
 	
@@ -264,7 +264,7 @@ $(function () {
 
 
 	// Initialization of delete all entries button
-	$clearNoteButton.on('click', function() {
+	$clearNoteButton.on('click tap', function() {
 		var confirmDelete = confirm('Are you sure to delete all entries?');
 
 		if (confirmDelete){
@@ -283,7 +283,7 @@ $(function () {
 	});
 
 	// Initialization of create new entry button
-	$addNoteButton.on('click', function() {
+	$addNoteButton.on('click tap', function() {
 		var noteItem, 
 			newId,
 			$currencyValue = currency = 'none';
