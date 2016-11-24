@@ -81,9 +81,10 @@ h2{
 
 	#control_panel{
 		height: 25px;
+		padding-left: 90px;
 
 		#clear_note{
-			float: right;
+			margin-left: 10px;
 		}
 	}
 }
@@ -380,15 +381,27 @@ h2{
 	float: left;
 }
 
-.desc_input{
+.input{
 	margin: 6px 0 0 0;
 	height: 20px;
 	line-height: 20px;
 	display: block;
 	font-size: .75rem;
-	width: 300px;
-	padding: 2px 20px 2px 2px;
+
+	&.desc_input{
+		width: 300px;
+		padding: 2px 20px 2px 2px;
+	}
+
+	&.value_input{
+		width: 90px;
+		padding: 2px;
+		text-align: right;
+		margin: 6px auto 0;
+	}
 }
+
+
 
 .note_item_wrap.add_new .no_edit,
 .note_item_wrap.edit_item .no_edit,
@@ -404,6 +417,11 @@ h2{
 .note_item_wrap:hover{
 	background: #FFFFD4;
 	transition: .4s ease;
+}
+
+.note_item_wrap.edit_item .note_item_value,
+.note_item_wrap.add_new .note_item_value{
+	text-align: center;	
 }
 
 .note_controls{
@@ -440,11 +458,12 @@ h2{
 }
 
 .note_item_value{
-	width: 120px;
+	width: 110px;
 	height: 40px;
 	line-height: 40px;
-	text-align: center;
 	border-right: #aaa 1px solid;
+	text-align: right;
+	padding: 0 5px;
 }
 
 .note_item_decs{
