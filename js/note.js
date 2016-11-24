@@ -6,6 +6,7 @@ $(function () {
 		$noteOverall = $('#note_overall'),
 		$clearNoteButton = $('#clear_note'),
 		$addNoteButton = $('#add_note'),
+		$valueInput = $('.value_input'),
 		noteLineTemplate = $('#note_line_template').html(),
 		noteItemList = {},
 		counterId = overall = 0;
@@ -154,6 +155,8 @@ $(function () {
 		
 			addNoteItemToList(newId, noteItem);
 			addEntry(newId, noteItem);
+			
+			$('.note_item_wrap[data-id=' + newId +'] .value_input').val($fCalcValue.html());
 		};
 
 		showFreeEntries();	
