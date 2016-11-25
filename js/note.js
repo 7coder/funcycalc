@@ -9,7 +9,8 @@ $(function () {
 		$valueInput = $('.value_input'),
 		noteLineTemplate = $('#note_line_template').html(),
 		noteItemList = {},
-		counterId = overall = 0;
+		counterId = overall = 0,
+		regExpSymbols = /(@|#|%|&|±|§|\?|~|`|>|<|\$|\^|_|-|\{|\}|\[|\]|№){2,}/g;
 		
 
 	// Initialization of Mustach.js
@@ -109,6 +110,15 @@ $(function () {
 	//To limit characters in Description input
 	function limitInput(){
 		$('.desc_input').on('keyup', function(){
+
+			var input = $(this).val();
+
+			if (input.match(regExpSymbols)){
+				input = input.substr(0, input.length -1);
+			}
+			
+			$(this).val(input);
+
 			doLimitInput(this, 50);
 		});
 	};
@@ -156,7 +166,7 @@ $(function () {
 			addNoteItemToList(newId, noteItem);
 			addEntry(newId, noteItem);
 			
-			$('.note_item_wrap[data-id=' + newId +'] .value_input').val($fCalcValue.html());
+			$('.note_item_wrap[data-id=' + newId +'] .value_input').val(noteItem['value']);
 		};
 
 		showFreeEntries();	
@@ -170,6 +180,9 @@ $(function () {
 		var resultObj = calcOverall();
 
 		showCurrencyValues(resultObj);
+
+		
+
 
 	});
 
@@ -211,7 +224,7 @@ $(function () {
 
 	// Initialization of save button
 	$noteContainer.on('click tap', '.note_item_wrap .save', function() {
-		
+
 		var $itemWrap = $(this).closest('.note_item_wrap'),
 			descInputValue = $itemWrap.find('.desc_input').val(),
 			numberInputValue = $itemWrap.find('.value_input').val(),
@@ -239,6 +252,9 @@ $(function () {
 			};
 
 		$itemWrap.removeClass('add_new').removeClass('edit_item');
+
+		var heightDesc = $itemWrap.find('.note_item_decs').height();
+		$itemWrap.find('.value_text').css('height', heightDesc);
 
 		var resultObj = calcOverall();
 
