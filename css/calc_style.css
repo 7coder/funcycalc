@@ -361,6 +361,11 @@ h2 {
 #note_result {
   width: 400px; }
 
+#default_currency {
+  margin-right: 15px; }
+  #default_currency .currency_list {
+    margin-left: 8px; }
+
 #content {
   padding-top: 40px; }
   #content ul, #content h2, #content h3 {

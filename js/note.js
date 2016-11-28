@@ -6,9 +6,11 @@ $(function () {
 		$noteOverall = $('#note_overall'),
 		$clearNoteButton = $('#clear_note'),
 		$addNoteButton = $('#add_note'),
+		$defaultCurrencySelector = $('#default_currency select'),
 		$valueInput = $('.value_input'),
 		noteLineTemplate = $('#note_line_template').html(),
 		noteItemList = {},
+		defaultCurrency = 'none',
 		counterId = overall = 0,
 		regExpSymbols = /(@|#|%|&|±|§|\?|~|`|>|<|\$|\^|_|-|\{|\}|\[|\]|№){2,}/g;
 		
@@ -143,11 +145,40 @@ $(function () {
 	};
 
 
+	function calculateAndShow(){
+		var resultObj = calcOverall();
+		showCurrencyValues(resultObj);
+	};
+
+
+	function createObjectNoteItem(value){
+		
+		var noteItem, 
+			newId;
+
+		noteItem = createNoteItem(value.html(), 'Description', defaultCurrency);
+
+			newId = counterId++;
+
+			if(value === '' || !$.isNumeric(value)){
+				noteItem['value'] = 0;
+			}
+		
+			addNoteItemToList(newId, noteItem);
+			addEntry(newId, noteItem);
+
+			$('.note_item_wrap[data-id=' + newId +'] .value_input').val(noteItem['value']);
+			$('.note_item_wrap[data-id=' + newId +'] .currency_list').val(defaultCurrency);
+
+		return newId;
+
+	};
+
+
 	// Initialization of Send Value button
 	$('#button_send').on('click tap', function(){
-		var noteItem, 
-			newId,
-			$currencyValue = currency = 'none';
+
+		
 
 		// The limit on the number of lines
 		if ($('.note_item_wrap').length >= 10){
@@ -156,17 +187,8 @@ $(function () {
 
 		} else{
 
-			noteItem = createNoteItem($fCalcValue.html(), 'Description', $currencyValue);
-			newId = counterId++;
-
-			if($fCalcValue.html() === '' || !$.isNumeric($fCalcValue.html())){
-				noteItem['value'] = 0;
-			}
-		
-			addNoteItemToList(newId, noteItem);
-			addEntry(newId, noteItem);
+			createObjectNoteItem($fCalcValue);				
 			
-			$('.note_item_wrap[data-id=' + newId +'] .value_input').val(noteItem['value']);
 		};
 
 		showFreeEntries();	
@@ -177,12 +199,7 @@ $(function () {
 
 		checkInputIsTypeNumber();
 
-		var resultObj = calcOverall();
-
-		showCurrencyValues(resultObj);
-
 		
-
 
 	});
 
@@ -196,9 +213,8 @@ $(function () {
 			
 			noteItemList[wrapperId]['currency'] = $currencyValue;
 
-			var resultObj = calcOverall();
+			calculateAndShow();
 
-			showCurrencyValues(resultObj);
 		
 	});
 
@@ -212,11 +228,14 @@ $(function () {
 			wrapperValue = noteItemList[wrapperId]['value'];
 			
 		$itemWrap.fadeOut(200, function() {
+			
 			$itemWrap.remove();	
 			delete noteItemList[wrapperId];
+			
 			showFreeEntries();
-			var resultObj = calcOverall();	
-			showCurrencyValues(resultObj);
+			
+			calculateAndShow();
+
 		}); 
 
 	});
@@ -253,12 +272,7 @@ $(function () {
 
 		$itemWrap.removeClass('add_new').removeClass('edit_item');
 
-		var heightDesc = $itemWrap.find('.note_item_decs').height();
-		$itemWrap.find('.value_text').css('height', heightDesc);
-
-		var resultObj = calcOverall();
-
-		showCurrencyValues(resultObj);
+		calculateAndShow();
 
 	});
 
@@ -289,8 +303,8 @@ $(function () {
 			
 			showFreeEntries();
 
-			var resultObj = calcOverall();
-			showCurrencyValues(resultObj);
+			calculateAndShow();
+
 		} else {
 			return;
 		};
@@ -300,9 +314,6 @@ $(function () {
 
 	// Initialization of create new entry button
 	$addNoteButton.on('click tap', function() {
-		var noteItem, 
-			newId,
-			$currencyValue = currency = 'none';
 
 		// The limit on the number of lines
 		if ($('.note_item_wrap').length >= 10){
@@ -311,17 +322,10 @@ $(function () {
 
 		} else{
 
-			noteItem = createNoteItem($valueInput.html(), 'Description', $currencyValue);
+			createObjectNoteItem($valueInput);
 
-			newId = counterId++;
-
-			if($valueInput === '' || !$.isNumeric($valueInput)){
-				noteItem['value'] = 0;
-			}
-		
-			addNoteItemToList(newId, noteItem);
-			addEntry(newId, noteItem);
 		};
+
 
 		showFreeEntries();	
 
@@ -332,6 +336,11 @@ $(function () {
 		checkInputIsTypeNumber();
 		
 		
+	});
+
+	// Initialization of set default currency selector
+	$defaultCurrencySelector.on('change', function(){
+		defaultCurrency = $(this).val();
 	});
 	
 
