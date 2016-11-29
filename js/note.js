@@ -156,7 +156,7 @@ $(function () {
 		var noteItem, 
 			newId;
 
-		noteItem = createNoteItem(value.html(), 'Description', defaultCurrency);
+		noteItem = createNoteItem(value, 'Description', defaultCurrency);
 
 			newId = counterId++;
 
@@ -169,8 +169,6 @@ $(function () {
 
 			$('.note_item_wrap[data-id=' + newId +'] .value_input').val(noteItem['value']);
 			$('.note_item_wrap[data-id=' + newId +'] .currency_list').val(defaultCurrency);
-
-		return newId;
 
 	};
 
@@ -187,7 +185,7 @@ $(function () {
 
 		} else{
 
-			createObjectNoteItem($fCalcValue);				
+			createObjectNoteItem($fCalcValue.html());				
 			
 		};
 
@@ -250,12 +248,13 @@ $(function () {
 			wrapperId = $itemWrap.data('id');
 
 			if (descInputValue === ''){
+
 				noteItemList[wrapperId]['desc'] = '...';
 				$itemWrap.find('.desc_text').html('...');
 
 			} else {
 
-				noteItemList[wrapperId]['desc'] =  descInputValue;
+				noteItemList[wrapperId]['desc'] = descInputValue;
 				$itemWrap.find('.desc_text').html(descInputValue);
 			};
 
@@ -267,12 +266,14 @@ $(function () {
 
 				noteItemList[wrapperId]['value'] = numberInputValue;
 				$itemWrap.find('.value_text ').html(numberInputValue);
-			
+
+
 			};
 
 		$itemWrap.removeClass('add_new').removeClass('edit_item');
 
 		calculateAndShow();
+		
 
 	});
 
@@ -322,7 +323,7 @@ $(function () {
 
 		} else{
 
-			createObjectNoteItem($valueInput);
+			createObjectNoteItem($valueInput.val());
 
 		};
 
