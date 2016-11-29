@@ -167,8 +167,9 @@ $(function () {
 			addNoteItemToList(newId, noteItem);
 			addEntry(newId, noteItem);
 
-			$('.note_item_wrap[data-id=' + newId +'] .value_input').val(noteItem['value']);
 			$('.note_item_wrap[data-id=' + newId +'] .currency_list').val(defaultCurrency);
+
+		return [newId, noteItem];
 
 	};
 
@@ -197,7 +198,7 @@ $(function () {
 
 		checkInputIsTypeNumber();
 
-		
+		calculateAndShow();
 
 	});
 
@@ -265,7 +266,7 @@ $(function () {
 			} else { 
 
 				noteItemList[wrapperId]['value'] = numberInputValue;
-				$itemWrap.find('.value_text ').html(numberInputValue);
+				$itemWrap.find('.value_text').html(numberInputValue);
 
 
 			};
@@ -281,7 +282,10 @@ $(function () {
 	// Initialization of edit button
 	$noteContainer.on('click tap', '.note_item_wrap .edit_desc', function() {
 
-		$(this).closest('.note_item_wrap').addClass('edit_item');
+		var $transfer = $(this).closest('.note_item_wrap');
+		
+		$transfer.addClass('edit_item');
+		$transfer.find('.value_input').val($transfer.find('.value_text').html());
 	
 	});
 
@@ -323,7 +327,11 @@ $(function () {
 
 		} else{
 
-			createObjectNoteItem($valueInput.val());
+			var returnednewId = createObjectNoteItem($valueInput.val());
+
+			$('.note_item_wrap[data-id=' + returnednewId[0] +']').addClass('add_new');
+		
+			$('.note_item_wrap[data-id=' + returnednewId[0] +'] .value_input').val(returnednewId[1]['value']);
 
 		};
 
